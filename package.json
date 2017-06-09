@@ -4,8 +4,14 @@
   "description": "Testing purposes",
   "main": "index.js",
   "scripts": {
+	 "start": "node index.js",
+"heroku-prebuild": "echo This runs before Heroku installs your dependencies.",
+  "heroku-postbuild": "post",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+"engines": {
+"node": "7.6.0"
+},
   "keywords": [
     "test"
   ],
