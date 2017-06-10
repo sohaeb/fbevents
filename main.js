@@ -5,3 +5,4 @@ request('https://graph.facebook.com/uwindsormsa/events?fields=name,picture&limit
         console.log(JSON.parse(body)); // Show the JSON for the Star Wars Character
     }
 });
+console.log("Running Now");
