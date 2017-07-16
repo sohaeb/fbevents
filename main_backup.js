@@ -2,13 +2,13 @@
   var admin = require("firebase-admin");
   var https = require('https');
   const async = require('async');
+  var serviceAccount = require("./nodejs-a3a07-firebase-adminsdk-hx4cb-24e337ad8c.json");
 
 
-  var serviceAccount = require("./uwindsormsa-b5d32-firebase-adminsdk-lpueq-f1492ecaf9.json");
-
+  //------- initialize Firebase DB -----------//
   admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
-    databaseURL: "https://uwindsormsa-b5d32.firebaseio.com"
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://nodejs-a3a07.firebaseio.com"
   });
 
   //------- Constants & Variables -----------//
@@ -16,23 +16,47 @@
   var param = 'events?fields=name,start_time,cover,end_time,place,description&since=now&' + accessToken;
   var url = 'https://graph.facebook.com'
   // full url -> 'https://graph.facebook.com/Ubuntu.Iraq/events?fields=name,start_time,end_time,place,description&since=now&access_token=301801280168696|FDzuXZs_Mio_vtBjPvH-fYcBglU')
+  var urls = [
+    url + '/annoorschool/' + param,
+    url + '/windsormosque/' + param,
+    url + '/wiyouthcouncil/' + param,
+    url + '/WindsorIslamicC/' + param,
+    url + '/MAC.RCIC/' + param,
+    url + '/qabeelahittihaadwindsor/' + param,
+    url + '/AlHijraAcademy/' + param,
+    url + '/Ubuntu.Iraq/' + param
+  ];
+
+  //------- Grab JSON from multiple URls and save it in one array -----------//
 
   // TODO: Fix this to remove data
-  // TODO: promises
-  // TODO: remove old events
 
-  request({
-      url: url + '/ubuntu.iraq/' + param,
-      json: true
-  }, function (error, response, body) {
+  function httpGet(url, callback) {
 
-      if (!error && response.statusCode === 200) {
-          // console.log(body) // Print the json response
-         accessFirebaseDataBase(body);
-      }
-  })
+      const options = {
+        url :  url,
+        json : true
+      };
 
-  // accessFirebaseDataBase(res);
+      request(options,
+        function(err, res, body) {
+          callback(err, body);
+        }
+      );
+  }
+
+  // --------------- Main Stuff ------------------ //
+  //------- Read from each slot in the array -----------//
+  async.map(urls, httpGet, function (err, res){
+    if (err) return console.log(err);
+
+    // 1-
+    // var jsonData = removePaging(res)
+
+    // 2-
+    accessFirebaseDataBase(res);
+  });
+
   // **************************************************************************//
   // - 1 - remove 'paging' from json before saving to db-
   // **************************************************************************//
@@ -51,19 +75,19 @@
     function accessFirebaseDataBase(jsonData) {
 
       // -- 3 --
-      // var jsonWithNoDups = checkForMultipleHost(jsonData)
+      var jsonWithNoDups = checkForMultipleHost(jsonData)
       //  console.log("now data " + jsonWithNoDups[1].data[0].name);
       var ref = admin.database().ref("server/events");
       ref.once("value", function(snapshot) {
        if (snapshot.val() !== null) {
 
         // -- 4 --
-           readFromFirebase(jsonData);
+           readFromFirebase(jsonWithNoDups);
 
      } else {
 
         // -- 5 --
-           noDataExist(jsonData)
+           noDataExist(jsonWithNoDups)
         }
       });
     }
@@ -71,47 +95,47 @@
   // **************************************************************************//
   //  - 3 - check if two pages are hosting similar events and delete 1 from json
   // **************************************************************************//
-  // function checkForMultipleHost(jsonData) {
-  // // for ()
-  //   var m = i + 1
-  //   // ******************** //
-  //   // reading every page
-  //   // ******************** //
-  //   for (var i = 0; i < jsonData.length-1; i++){
-  //   //  var m = i + 1
-  //   // console.log("i is " + i);
-  //     console.log(jsonData[i]);
-  //
-  //     // ************************************************** //
-  //     // reading inside of each page (each events)
-  //     // ************************************************* //
-  //     for (var j = 0; j < jsonData[i].data.length; j++) {
-  //       var m = i + 1
-  //       // console.log(jsonData[m].data.length);
-  //
-  //       // ******************** *************************//
-  //       // reading event + 1 to comapre with previous
-  //       // ******************** *************************//
-  //       if (jsonData[m].data.length > 0) {
-  //     //  console.log("here");
-  //       //console.log(i + " " + j);
-  //       // console.log("value is " + jsonData[m].data[j].id);
-  //       if (jsonData[i].data[j].id === jsonData[m].data[j].id){
-  //       // var m = i+1
-  //         // console.log("Found dups at index" + i + " " + j);
-  //
-  //         // *********************************************************//
-  //         // delete the duplicated event from JSON then save to db
-  //         // *********************************************************//
-  //         delete jsonData[i].data[j];
-  //
-  //         // console.log("data json is " + jsonData[i].data[j].name);
-  //         }
-  //       }
-  //     }
-  //   }
-  //   return jsonData
-  // }
+  function checkForMultipleHost(jsonData) {
+  // for ()
+    var m = i + 1
+    // ******************** //
+    // reading every page
+    // ******************** //
+    for (var i = 0; i < jsonData.length-1; i++){
+    //  var m = i + 1
+    // console.log("i is " + i);
+      console.log(jsonData[i]);
+
+      // ************************************************** //
+      // reading inside of each page (each events)
+      // ************************************************* //
+      for (var j = 0; j < jsonData[i].data.length; j++) {
+        var m = i + 1
+        // console.log(jsonData[m].data.length);
+
+        // ******************** *************************//
+        // reading event + 1 to comapre with previous
+        // ******************** *************************//
+        if (jsonData[m].data.length > 0) {
+      //  console.log("here");
+        //console.log(i + " " + j);
+        // console.log("value is " + jsonData[m].data[j].id);
+        if (jsonData[i].data[j].id === jsonData[m].data[j].id){
+        // var m = i+1
+          // console.log("Found dups at index" + i + " " + j);
+
+          // *********************************************************//
+          // delete the duplicated event from JSON then save to db
+          // *********************************************************//
+          delete jsonData[i].data[j];
+
+          // console.log("data json is " + jsonData[i].data[j].name);
+          }
+        }
+      }
+    }
+    return jsonData
+  }
 
   // *****************************************************************//
   //  - 4 - Write Data to Database -----------
@@ -129,26 +153,26 @@
     // console.log("jsonData.length " + jsonData.length);
     //console.log("jsonData[i].length " + jsonData[0].length);
   // Loop the JSON values
-
+    for (var i=0; i < jsonData.length; i++){
       // console.log("i is " + i);
       // console.log(jsonData[i].data.length);
       // console.log("jsonData[i].length is " + jsonData[i].length);
-      for (var j = 0; j < jsonData.data.length; j++) {
+      for (var j = 0; j < jsonData[i].data.length; j++) {
 
       //   console.log("inside for-loop");
       //   console.log("jsonData.length is " + jsonData[i].data[j]);
       //   console.log("out j is " + j);
 
       // - 4 - A -
-      checkForDupsInsideDB(jsonData, j, jsonData.data[j].id);
+      checkForDupsInsideDB(jsonData, i, j, jsonData[i].data[j].id);
       }
       // console.log("out of loop j");
-
+      }
 
   // *******************************************************************************//
   //  - 4 - A - if new event dones't have same {id} of event in Database --> save
   // ******************************************************************************//
-  function checkForDupsInsideDB(jsonData, j, id){
+  function checkForDupsInsideDB(jsonData, i, j, id){
     // console.log("Checking user for id " + id);
     // console.log(i + "/data");
     ref123.orderByChild("id").equalTo(id).once("value", function(snapshot) {
@@ -183,11 +207,11 @@
           //  console.log(jsonData.data[0].id);
 
           // - 4 - B -
-            addUnderNameFOrNotifications(jsonData,j);
+            addUnderNameFOrNotifications(jsonData,i,j);
           // - 4 - C -
             //saveToFirebase(jsonData, i,j);
 
-            addNewEvent(jsonData,j);
+            addNewEvent(jsonData,i,j);
           }
       });
     }
@@ -196,10 +220,10 @@
   // *****************************************************************//
   // - 4 - B - This is used to save name in a different node, why ? to use FCM
   // *****************************************************************//
-  function addUnderNameFOrNotifications(jsonData,i) {
+  function addUnderNameFOrNotifications(jsonData,i,j) {
 
     var ref = admin.database().ref("server/name/");
-    ref.child(jsonData.data[i].id).set(jsonData.data[i].name, function(error) {
+    ref.child(jsonData[i].data[j].id).set(jsonData[i].data[j].name, function(error) {
     if (error) {
       console.log("addUnderNameFOrNotifications: Name of event could not be saved." + error);
     } else {
@@ -208,15 +232,15 @@
   });
   }
 
-  function addNewEvent(jsonData,i) {
+  function addNewEvent(jsonData,i,j) {
 
-    var ref345 = admin.database().ref("server/events");
-    var usersRef = ref345.child(jsonData.data[i].id);
-    usersRef.set(jsonData.data[i], function(error) {
+    var ref345 = admin.database().ref("server/events/");
+    var usersRef = ref345.child(jsonData[i].data[j].id);
+    usersRef.set(jsonData[i].data[j], function(error) {
     if (error) {
-      console.log("addNewEvent: event could not be saved." + error);
+      console.log("addNewEvent: Name of event could not be saved." + error);
     } else {
-      console.log("addNewEvent: event saved successfully.");
+      console.log("addNewEvent: Name of event saved successfully.");
     }
   });
   }
@@ -264,13 +288,14 @@
     // var db = admin.database();
     var ref = admin.database().ref("server");
     var nameRef = ref.child("name");
-    var eventRef = ref.child("event");
-
-    for (var i = 0; i < jsonData.data.length; i++) {
-      addUnderNameFOrNotifications(jsonData, i);
-      addNewEvent(jsonData,i);
+    for (var i = 0; i < jsonData.length; i++){
+      for (var j = 0; j < jsonData[i].data.length; j++) {
+        // console.log(jsonData[i].data[j].name);
+        // nameRef.child(i).child(j).set(jsonData[i].data[j].name)
+        addNewEvent(jsonData,i,j);
+        addUnderNameFOrNotifications(jsonData,i,j);
     }
-
+  }
     console.log("leaving noDataExist");
   }
 
