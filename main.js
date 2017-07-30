@@ -322,7 +322,8 @@
     var data = {
       "name": jsonData.data[i].name
     }
-    fbRef.ref("/server/name").set(jsonData.data[i].name, function (error) {
+    
+    fbRef.ref("/server/name").set(data, function (error) {
       if (error) {
         // console.log("Page: " + fbPage  + " - checkForDupsInsideDB: Event doesn't exis in DB ");
         console.log("Page: " + fbPage  + " - addUnderNameFOrNotifications: Name of event could not be saved." + error);

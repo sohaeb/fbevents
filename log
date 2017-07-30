@@ -636,3 +636,21 @@ Page: uwindsormsa - checkForDupsInsideDB: Event exist
 FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
 FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
 FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+************************
+
+  Date is Sun Jul 30 2017 17:30:01 GMT-0400 (EDT)
+  
+  ************************
+Reached End of app
+switch uwindsormsa
+switch wic
+Calling readFromFirebase
+Page: uwindsormsa - checkForDupsInsideDB: Event exist 
+Page: uwindsormsa - checkForDupsInsideDB: Event exist 
+Page: uwindsormsa - checkForDupsInsideDB: Event exist 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+Calling readFromFirebase
+Page: wic - checkForDupsInsideDB: Event exist 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
