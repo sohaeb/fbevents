@@ -1,35 +1,135 @@
   var request = require("request");
   var admin = require("firebase-admin");
-  var https = require('https');
-  const async = require('async');
+
+  
+  // TODO: Fix this to remove data
+  // TODO: promises
+  // TODO: remove old events
+
+  
+   //------- Constants & Variables -----------//
+  let accessToken = 'access_token=301801280168696|FDzuXZs_Mio_vtBjPvH-fYcBglU'
+  var param = 'events?fields=name,start_time,cover,end_time,place,description&since=now&' + accessToken;
+  var url = 'https://graph.facebook.com'
+  // full url -> 'https://graph.facebook.com/Ubuntu.Iraq/events?fields=name,start_time,end_time,place,description&since=now&access_token=301801280168696|FDzuXZs_Mio_vtBjPvH-fYcBglU')
 
 
-  var serviceAccount = require("./uwindsormsa-b5d32-firebase-adminsdk-lpueq-f1492ecaf9.json");
+
+
+  var date = Date();
+
+  console.log (
+
+  `************************
+
+  Date is ${date}
+  
+  ************************`
+
+  );
+
+  // uwindsormsa
+
+  var serviceAccount = require("./service_accounts/uwindsormsa-b5d32-firebase-adminsdk-lpueq-f1492ecaf9.json");
 
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
     databaseURL: "https://uwindsormsa-b5d32.firebaseio.com"
   });
 
-  //------- Constants & Variables -----------//
-  let accessToken = 'access_token=301801280168696|FDzuXZs_Mio_vtBjPvH-fYcBglU'
-  var param = 'events?fields=name,start_time,cover,end_time,place,description&since=now&' + accessToken;
-  var url = 'https://graph.facebook.com'
-  // full url -> 'https://graph.facebook.com/Ubuntu.Iraq/events?fields=name,start_time,end_time,place,description&since=now&access_token=301801280168696|FDzuXZs_Mio_vtBjPvH-fYcBglU')
 
-  // TODO: Fix this to remove data
-  // TODO: promises
-  // TODO: remove old events
+  // wia
+
+  var serviceAccount = require("./service_accounts/wiassociation-9e259-firebase-adminsdk-s9p59-474d67974c.json");
+
+  var wia_config = {
+    credential: admin.credential.cert(serviceAccount),
+    databaseURL: "https://wiassociation-9e259.firebaseio.com"
+  };
+
+  var wia = admin.initializeApp(wia_config, "wia");
+
+  // noor
+
+  var serviceAccount = require("./service_accounts/anoorschool-4330c-firebase-adminsdk-6fsxt-220743a3e6.json");
+
+  var noor_config = {
+    credential: admin.credential.cert(serviceAccount),
+    databaseURL: "https://anoorschool-4330c.firebaseio.com"
+  };
+
+  var noor = admin.initializeApp(noor_config, "noor");
+
+  // wic
+
+  var serviceAccount = require("./service_accounts/nodejs-a3a07-firebase-adminsdk-hx4cb-24e337ad8c.json");
+
+  var node_config = {
+    credential: admin.credential.cert(serviceAccount),
+    databaseURL: "https://nodejs-a3a07.firebaseio.com"
+  };
+
+  var wic = admin.initializeApp(node_config, "wic");
+
+
+
+ 
+  // wic
 
   request({
-      url: url + '/ubuntu.iraq/' + param,
-      json: true
+    url: url + '/uwindsormsa/' + param,
+    json: true
   }, function (error, response, body) {
 
-      if (!error && response.statusCode === 200) {
-          // console.log(body) // Print the json response
-         accessFirebaseDataBase(body);
-      }
+    if (!error && response.statusCode === 200 && body.data.length > 0) {
+      
+        accessFirebaseDataBase(body, "uwindsormsa");
+    
+    }
+  })
+
+  // noor
+
+  request({
+    url: url + '/annoorschool/' + param,
+    json: true
+  }, function (error, response, body) {
+    if (!error && response.statusCode === 200 && body.data.length > 0) {
+      // // Print the json response
+      // if (JSON.parse(body).data.length > 0) {
+        accessFirebaseDataBase(body, "noor");
+      // }
+    }
+  })
+
+  // windsor
+
+  request({
+    url: url + '/windsormosque/' + param,
+    json: true
+  }, function (error, response, body) {
+
+    if (!error && response.statusCode === 200 && body.data.length > 0) {
+      // // Print the json response
+      // if (JSON.parse(body).data.length > 1) {
+        accessFirebaseDataBase(body, "wia");
+      // }
+    }
+  })
+
+  //WIC
+
+  request({
+    url: url + '/WindsorIslamicC/' + param,
+    json: true
+  }, function (error, response, body) {
+
+    if (!error && response.statusCode === 200 && body.data.length > 0) {
+      // // Print the json response
+      // if (JSON.parse(body).data.length > 0) {
+        accessFirebaseDataBase(body, "wic");
+      // }
+    }
   })
 
   // accessFirebaseDataBase(res);
@@ -48,25 +148,51 @@
   // **************************************************************************//
   // - 2 - Connect to Database & read from <path>
   // **************************************************************************//
-    function accessFirebaseDataBase(jsonData) {
+  function accessFirebaseDataBase(jsonData, fbPage) {
 
-      // -- 3 --
-      // var jsonWithNoDups = checkForMultipleHost(jsonData)
-      //  console.log("now data " + jsonWithNoDups[1].data[0].name);
-      var ref = admin.database().ref("server/events");
-      ref.once("value", function(snapshot) {
-       if (snapshot.val() !== null) {
+    // console.log("entering switch");
+    switch (fbPage) {
+      case "uwindsormsa":
+        var ref = admin.database();
+        console.log("switch uwindsormsa");
+        break;
+      case "noor":
+        var ref = noor.database();
+        console.log("switch noor");
+        break;
+      case "wia":
+        var ref = wia.database();
+        console.log("switch wia");
+        break;
+      case "wic":
+        var ref = wic.database();
+        console.log("switch wic");
+        break;
+      default:
+        console.log("error at switch");
+        break;
+    }
+
+    // console.log("we passed switch");
+
+    // -- 3 --
+    // var jsonWithNoDups = checkForMultipleHost(jsonData)
+    //  console.log("now data " + jsonWithNoDups[1].data[0].name);
+    // var ref = admin.database().ref("server/events");
+
+    ref.ref("server/events").once("value", function (snapshot) {
+      if (snapshot.val() !== null) {
 
         // -- 4 --
-           readFromFirebase(jsonData);
+        readFromFirebase(jsonData, ref, fbPage);
 
-     } else {
+      } else {
 
         // -- 5 --
-           noDataExist(jsonData)
-        }
-      });
-    }
+        noDataExist(jsonData, ref, fbPage)
+      }
+    });
+  }
 
   // **************************************************************************//
   //  - 3 - check if two pages are hosting similar events and delete 1 from json
@@ -116,79 +242,74 @@
   // *****************************************************************//
   //  - 4 - Write Data to Database -----------
   // *****************************************************************//
-  function readFromFirebase(jsonData) {
+  function readFromFirebase(jsonData, fbRef, fbPage) {
     console.log("Calling readFromFirebase");
-
-    var exist = false;
-    var counter = 0;
-    var index = 0;
-    // var db = admin.database();
-    // var refOk = db.ref("server");
-    var ref123 = admin.database().ref("server/events");
 
     // console.log("jsonData.length " + jsonData.length);
     //console.log("jsonData[i].length " + jsonData[0].length);
-  // Loop the JSON values
+    // Loop the JSON values
 
-      // console.log("i is " + i);
-      // console.log(jsonData[i].data.length);
-      // console.log("jsonData[i].length is " + jsonData[i].length);
-      for (var j = 0; j < jsonData.data.length; j++) {
+    // console.log("i is " + i);
+    // console.log(jsonData[i].data.length);
+    // console.log("jsonData[i].length is " + jsonData[i].length);
+    for (var j = 0; j < jsonData.data.length; j++) {
 
       //   console.log("inside for-loop");
       //   console.log("jsonData.length is " + jsonData[i].data[j]);
       //   console.log("out j is " + j);
 
       // - 4 - A -
-      checkForDupsInsideDB(jsonData, j, jsonData.data[j].id);
-      }
-      // console.log("out of loop j");
+      checkForDupsInsideDB(jsonData, j, jsonData.data[j].id, fbRef, fbPage);
+    }
+    // console.log("out of loop j");
 
 
-  // *******************************************************************************//
-  //  - 4 - A - if new event dones't have same {id} of event in Database --> save
-  // ******************************************************************************//
-  function checkForDupsInsideDB(jsonData, j, id){
-    // console.log("Checking user for id " + id);
-    // console.log(i + "/data");
-    ref123.orderByChild("id").equalTo(id).once("value", function(snapshot) {
-          var userData = snapshot.val();
-          //console.log("inside index is " + index);
-          //console.log("DB value is = " + userData[index].name);
-          //console.log("jsonData value is = " + id);
-          if (userData){
-            console.log("checkForDupsInsideDB: Event exist");
+    // *******************************************************************************//
+    //  - 4 - A - if new event dones't have same {id} of event in Database --> save
+    // ******************************************************************************//
+    function checkForDupsInsideDB(jsonData, j, id, fbRef, fbPage) {
 
-            // console.log("exists!");
-            // console.log("inside index is " + i);
+      // console.log("Checking user for id " + id);
+      // console.log(i + "/data");
+      fbRef.ref("server/events").orderByChild("id").equalTo(id).once("value", function (snapshot) {
+        var userData = snapshot.val();
+        //console.log("inside index is " + index);
+        //console.log("DB value is = " + userData[index].name);
+        //console.log("jsonData value is = " + id);
+        if (userData) {
+          console.log("Page: " + fbPage  + " - checkForDupsInsideDB: Event exist ");
 
-            // ------- [Object object] -> use stringfy to parse it
-            //console.log("DB value is = " + JSON.stringify(userData));
+          // console.log("exists!");
+          // console.log("inside index is " + i);
+
+          // ------- [Object object] -> use stringfy to parse it
+          //console.log("DB value is = " + JSON.stringify(userData));
 
 
-            //console.log("test 123 " + Object.values( userData.id));
-            //console.log("test" + Object.values( userData));
+          //console.log("test 123 " + Object.values( userData.id));
+          //console.log("test" + Object.values( userData));
 
-            // ------- undefined
-            // console.log("DB value is = " + userData.id);
+          // ------- undefined
+          // console.log("DB value is = " + userData.id);
 
-            // ------- Undefined
-            // console.log("DB value is = " + userData[i]);
+          // ------- Undefined
+          // console.log("DB value is = " + userData[i]);
 
-            // ------- Error
-            // console.log("DB value is = " + userData[j].id);
+          // ------- Error
+          // console.log("DB value is = " + userData[j].id);
 
-          } else {
-            console.log("checkForDupsInsideDB: event doesn't exist in Database");
+        } else {
+           console.log("Page: " + fbPage  + " - checkForDupsInsideDB: Event doesn't exis in DB ");
+          
           //  console.log(jsonData.data[0].id);
 
           // - 4 - B -
-            addUnderNameFOrNotifications(jsonData,j);
+          addUnderNameFOrNotifications(jsonData, j, fbRef);
           // - 4 - C -
-            //saveToFirebase(jsonData, i,j);
+          //saveToFirebase(jsonData, i,j);
 
-            addNewEvent(jsonData,j);
-          }
+          addNewEvent(jsonData, j, fbRef);
+        }
       });
     }
   }
@@ -196,29 +317,33 @@
   // *****************************************************************//
   // - 4 - B - This is used to save name in a different node, why ? to use FCM
   // *****************************************************************//
-  function addUnderNameFOrNotifications(jsonData,i) {
+  function addUnderNameFOrNotifications(jsonData, i, fbRef, fbPage) {
 
-    var ref = admin.database().ref("server/name/");
-    ref.child(jsonData.data[i].id).set(jsonData.data[i].name, function(error) {
-    if (error) {
-      console.log("addUnderNameFOrNotifications: Name of event could not be saved." + error);
-    } else {
-      console.log("addUnderNameFOrNotifications: Name of event saved successfully.");
+    var data = {
+      "name": jsonData.data[i].name
     }
-  });
+    fbRef.ref("/server/name").set(jsonData.data[i].name, function (error) {
+      if (error) {
+        // console.log("Page: " + fbPage  + " - checkForDupsInsideDB: Event doesn't exis in DB ");
+        console.log("Page: " + fbPage  + " - addUnderNameFOrNotifications: Name of event could not be saved." + error);
+      } else {
+        console.log("Page: " + fbPage  + " - addUnderNameFOrNotifications: Name of event saved SUCCESS.");
+        // console.log("addUnderNameFOrNotifications: Name of event saved successfully.");
+      }
+    })
   }
 
-  function addNewEvent(jsonData,i) {
+  function addNewEvent(jsonData, i, fbRef, fbPage) {
 
-    var ref345 = admin.database().ref("server/events");
-    var usersRef = ref345.child(jsonData.data[i].id);
-    usersRef.set(jsonData.data[i], function(error) {
-    if (error) {
-      console.log("addNewEvent: event could not be saved." + error);
-    } else {
-      console.log("addNewEvent: event saved successfully.");
-    }
-  });
+    var n = new Date().getMilliseconds(); //so that there is not dups and things get overwritten
+
+    fbRef.ref("server/events").child(jsonData.data[i].start_time + n).set(jsonData.data[i], function (error) {
+      if (error) {
+        console.log("Page: " + fbPage  + " - addNewEvent: event could not be saved" + error);
+      } else {
+        console.log("Page: " + fbPage  + " - addNewEvent: event saved successfully");
+      }
+    })
   }
 
   // *****************************************************************//
@@ -259,19 +384,23 @@
   // *********************************************************//
   // - 5 - if db is empty, this func will be called:
   // *********************************************************//
-  function noDataExist(jsonData) {
-    console.log("calling noDataExist");
-    // var db = admin.database();
-    var ref = admin.database().ref("server");
-    var nameRef = ref.child("name");
-    var eventRef = ref.child("event");
+  function noDataExist(jsonData, fbRef) {
+    console.log("calling noDataExist function");
+
+    var nameRef = fbRef.ref("server").child("name");
+    var eventRef = fbRef.ref("server").child("event");
 
     for (var i = 0; i < jsonData.data.length; i++) {
-      addUnderNameFOrNotifications(jsonData, i);
-      addNewEvent(jsonData,i);
+      addUnderNameFOrNotifications(jsonData, i, fbRef);
+      addNewEvent(jsonData, i, fbRef);
     }
-
-    console.log("leaving noDataExist");
+    console.log("leaving noDataExist function");
   }
 
   console.log("Reached End of app");
+
+  // used to stop the fuking thing
+
+  setTimeout(() => {
+    process.exit(0);
+  }, 20000)

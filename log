@@ -1,0 +1,638 @@
+/bin/sh: node: command not found
+Reached End of app
+entering switch
+switch wia
+we passed switch
+entering switch
+switch noor
+we passed switch
+entering switch
+switch wic
+we passed switch
+entering switch
+switch uwindsormsa
+we passed switch
+Calling readFromFirebase
+checkForDupsInsideDB: Event exist
+checkForDupsInsideDB: Event exist
+checkForDupsInsideDB: Event exist
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+calling noDataExist
+leaving noDataExist
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+Calling readFromFirebase
+calling noDataExist
+leaving noDataExist
+checkForDupsInsideDB: Event exist
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+Reached End of app
+entering switch
+switch wia
+we passed switch
+entering switch
+switch wic
+we passed switch
+entering switch
+switch noor
+we passed switch
+entering switch
+switch uwindsormsa
+we passed switch
+Calling readFromFirebase
+calling noDataExist
+leaving noDataExist
+checkForDupsInsideDB: Event exist
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+calling noDataExist
+leaving noDataExist
+addUnderNameFOrNotifications: Name of event saved successfully.
+addNewEvent: event saved successfully.
+addUnderNameFOrNotifications: Name of event saved successfully.
+addNewEvent: event saved successfully.
+addUnderNameFOrNotifications: Name of event saved successfully.
+addNewEvent: event saved successfully.
+calling noDataExist
+leaving noDataExist
+Reached End of app
+entering switch
+switch wia
+we passed switch
+entering switch
+switch wic
+we passed switch
+entering switch
+switch noor
+we passed switch
+entering switch
+switch uwindsormsa
+we passed switch
+Calling readFromFirebase
+calling noDataExist
+leaving noDataExist
+calling noDataExist
+leaving noDataExist
+Calling readFromFirebase
+checkForDupsInsideDB: Event exist
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+checkForDupsInsideDB: Event exist
+checkForDupsInsideDB: Event exist
+checkForDupsInsideDB: Event exist
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+Reached End of app
+entering switch
+switch wia
+we passed switch
+entering switch
+switch noor
+we passed switch
+entering switch
+switch wic
+we passed switch
+entering switch
+switch uwindsormsa
+we passed switch
+calling noDataExist
+leaving noDataExist
+Calling readFromFirebase
+checkForDupsInsideDB: Event exist
+checkForDupsInsideDB: Event exist
+checkForDupsInsideDB: Event exist
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+Calling readFromFirebase
+calling noDataExist
+leaving noDataExist
+checkForDupsInsideDB: Event exist
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+Reached End of app
+entering switch
+switch noor
+we passed switch
+entering switch
+switch wic
+we passed switch
+entering switch
+switch wia
+we passed switch
+entering switch
+switch uwindsormsa
+we passed switch
+calling noDataExist
+leaving noDataExist
+Calling readFromFirebase
+checkForDupsInsideDB: Event exist
+checkForDupsInsideDB: Event exist
+checkForDupsInsideDB: Event exist
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+calling noDataExist
+leaving noDataExist
+Calling readFromFirebase
+checkForDupsInsideDB: Event exist
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+Reached End of app
+entering switch
+switch wia
+we passed switch
+entering switch
+switch uwindsormsa
+we passed switch
+entering switch
+switch noor
+we passed switch
+entering switch
+switch wic
+we passed switch
+Calling readFromFirebase
+calling noDataExist
+leaving noDataExist
+Calling readFromFirebase
+checkForDupsInsideDB: Event exist
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+checkForDupsInsideDB: Event exist
+checkForDupsInsideDB: Event exist
+checkForDupsInsideDB: Event exist
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+calling noDataExist
+leaving noDataExist
+Reached End of app
+entering switch
+switch wia
+we passed switch
+entering switch
+switch noor
+we passed switch
+entering switch
+switch wic
+we passed switch
+entering switch
+switch uwindsormsa
+we passed switch
+calling noDataExist
+leaving noDataExist
+Calling readFromFirebase
+checkForDupsInsideDB: Event exist
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+Calling readFromFirebase
+calling noDataExist
+leaving noDataExist
+checkForDupsInsideDB: Event exist
+checkForDupsInsideDB: Event exist
+checkForDupsInsideDB: Event exist
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+Reached End of app
+entering switch
+switch wia
+we passed switch
+entering switch
+switch noor
+we passed switch
+entering switch
+switch wic
+we passed switch
+entering switch
+switch uwindsormsa
+we passed switch
+calling noDataExist
+leaving noDataExist
+Calling readFromFirebase
+Calling readFromFirebase
+checkForDupsInsideDB: Event exist
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+calling noDataExist
+leaving noDataExist
+checkForDupsInsideDB: Event exist
+checkForDupsInsideDB: Event exist
+checkForDupsInsideDB: Event exist
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+Reached End of app
+entering switch
+switch wia
+we passed switch
+entering switch
+switch noor
+we passed switch
+entering switch
+switch wic
+we passed switch
+entering switch
+switch uwindsormsa
+we passed switch
+Calling readFromFirebase
+checkForDupsInsideDB: Event exist
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+calling noDataExist
+leaving noDataExist
+Calling readFromFirebase
+checkForDupsInsideDB: Event exist
+checkForDupsInsideDB: Event exist
+checkForDupsInsideDB: Event exist
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+calling noDataExist
+leaving noDataExist
+Reached End of app
+entering switch
+switch wia
+we passed switch
+entering switch
+switch noor
+we passed switch
+entering switch
+switch wic
+we passed switch
+entering switch
+switch uwindsormsa
+we passed switch
+calling noDataExist
+leaving noDataExist
+Calling readFromFirebase
+Calling readFromFirebase
+checkForDupsInsideDB: Event exist
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+checkForDupsInsideDB: Event exist
+checkForDupsInsideDB: Event exist
+checkForDupsInsideDB: Event exist
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+calling noDataExist
+leaving noDataExist
+Reached End of app
+entering switch
+switch noor
+we passed switch
+entering switch
+switch wia
+we passed switch
+entering switch
+switch wic
+we passed switch
+entering switch
+switch uwindsormsa
+we passed switch
+Calling readFromFirebase
+checkForDupsInsideDB: Event exist
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+calling noDataExist
+leaving noDataExist
+calling noDataExist
+leaving noDataExist
+Calling readFromFirebase
+checkForDupsInsideDB: Event exist
+checkForDupsInsideDB: Event exist
+checkForDupsInsideDB: Event exist
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+Reached End of app
+entering switch
+switch wia
+we passed switch
+entering switch
+switch noor
+we passed switch
+entering switch
+switch wic
+we passed switch
+entering switch
+switch uwindsormsa
+we passed switch
+calling noDataExist
+leaving noDataExist
+Calling readFromFirebase
+checkForDupsInsideDB: Event exist
+checkForDupsInsideDB: Event exist
+checkForDupsInsideDB: Event exist
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+Calling readFromFirebase
+checkForDupsInsideDB: Event exist
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+calling noDataExist
+leaving noDataExist
+Reached End of app
+entering switch
+switch wia
+we passed switch
+entering switch
+switch wic
+we passed switch
+entering switch
+switch noor
+we passed switch
+entering switch
+switch uwindsormsa
+we passed switch
+Calling readFromFirebase
+checkForDupsInsideDB: Event exist
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+calling noDataExist
+leaving noDataExist
+Calling readFromFirebase
+calling noDataExist
+leaving noDataExist
+checkForDupsInsideDB: Event exist
+checkForDupsInsideDB: Event exist
+checkForDupsInsideDB: Event exist
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+Date is Sun Jul 30 2017 05:30:01 GMT-0400 (EDT)
+Reached End of app
+entering switch
+switch wia
+we passed switch
+entering switch
+switch noor
+we passed switch
+entering switch
+switch wic
+we passed switch
+entering switch
+switch uwindsormsa
+we passed switch
+calling noDataExist
+leaving noDataExist
+calling noDataExist
+leaving noDataExist
+Calling readFromFirebase
+checkForDupsInsideDB: Event exist
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+Calling readFromFirebase
+checkForDupsInsideDB: Event exist
+checkForDupsInsideDB: Event exist
+checkForDupsInsideDB: Event exist
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+Date is Sun Jul 30 2017 08:30:00 GMT-0400 (EDT)
+Reached End of app
+entering switch
+switch noor
+we passed switch
+entering switch
+switch uwindsormsa
+we passed switch
+entering switch
+switch wia
+we passed switch
+entering switch
+switch wic
+we passed switch
+Calling readFromFirebase
+calling noDataExist
+leaving noDataExist
+calling noDataExist
+leaving noDataExist
+checkForDupsInsideDB: Event exist
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+Calling readFromFirebase
+checkForDupsInsideDB: Event exist
+checkForDupsInsideDB: Event exist
+checkForDupsInsideDB: Event exist
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+************************
+
+  Date is Sun Jul 30 2017 09:00:01 GMT-0400 (EDT)
+  
+  ************************
+Reached End of app
+undefined:1
+[object Object]
+ ^
+
+SyntaxError: Unexpected token o in JSON at position 1
+    at JSON.parse (<anonymous>)
+    at Request._callback (/Users/may/Documents/Developer/heroku/eventsfb/main.js:106:16)
+    at Request.self.callback (/Users/may/Documents/Developer/heroku/eventsfb/node_modules/request/request.js:188:22)
+    at emitTwo (events.js:125:13)
+    at Request.emit (events.js:213:7)
+    at Request.<anonymous> (/Users/may/Documents/Developer/heroku/eventsfb/node_modules/request/request.js:1171:10)
+    at emitOne (events.js:115:13)
+    at Request.emit (events.js:210:7)
+    at IncomingMessage.<anonymous> (/Users/may/Documents/Developer/heroku/eventsfb/node_modules/request/request.js:1091:12)
+    at Object.onceWrapper (events.js:314:30)
+************************
+
+  Date is Sun Jul 30 2017 09:30:01 GMT-0400 (EDT)
+  
+  ************************
+Reached End of app
+switch uwindsormsa
+switch wic
+Calling readFromFirebase
+checkForDupsInsideDB: Event exist
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+Calling readFromFirebase
+checkForDupsInsideDB: Event exist
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+************************
+
+  Date is Sun Jul 30 2017 10:00:01 GMT-0400 (EDT)
+  
+  ************************
+Reached End of app
+switch wic
+switch uwindsormsa
+Calling readFromFirebase
+Calling readFromFirebase
+Page: wic - checkForDupsInsideDB: Event exist 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+Page: uwindsormsa - checkForDupsInsideDB: Event exist 
+Page: uwindsormsa - checkForDupsInsideDB: Event exist 
+Page: uwindsormsa - checkForDupsInsideDB: Event exist 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+************************
+
+  Date is Sun Jul 30 2017 11:00:01 GMT-0400 (EDT)
+  
+  ************************
+Reached End of app
+switch wic
+switch uwindsormsa
+Calling readFromFirebase
+Calling readFromFirebase
+Page: wic - checkForDupsInsideDB: Event exist 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+Page: uwindsormsa - checkForDupsInsideDB: Event exist 
+Page: uwindsormsa - checkForDupsInsideDB: Event exist 
+Page: uwindsormsa - checkForDupsInsideDB: Event exist 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+************************
+
+  Date is Sun Jul 30 2017 11:30:02 GMT-0400 (EDT)
+  
+  ************************
+Reached End of app
+switch wic
+switch uwindsormsa
+Calling readFromFirebase
+Page: wic - checkForDupsInsideDB: Event exist 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+Calling readFromFirebase
+Page: uwindsormsa - checkForDupsInsideDB: Event exist 
+Page: uwindsormsa - checkForDupsInsideDB: Event exist 
+Page: uwindsormsa - checkForDupsInsideDB: Event exist 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+************************
+
+  Date is Sun Jul 30 2017 12:00:02 GMT-0400 (EDT)
+  
+  ************************
+Reached End of app
+switch wic
+switch uwindsormsa
+Calling readFromFirebase
+Page: wic - checkForDupsInsideDB: Event exist 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+Calling readFromFirebase
+Page: uwindsormsa - checkForDupsInsideDB: Event exist 
+Page: uwindsormsa - checkForDupsInsideDB: Event exist 
+Page: uwindsormsa - checkForDupsInsideDB: Event exist 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+************************
+
+  Date is Sun Jul 30 2017 12:30:01 GMT-0400 (EDT)
+  
+  ************************
+Reached End of app
+switch wic
+switch uwindsormsa
+************************
+
+  Date is Sun Jul 30 2017 13:00:01 GMT-0400 (EDT)
+  
+  ************************
+Reached End of app
+switch wic
+switch uwindsormsa
+Calling readFromFirebase
+Page: wic - checkForDupsInsideDB: Event exist 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+Calling readFromFirebase
+Page: uwindsormsa - checkForDupsInsideDB: Event exist 
+Page: uwindsormsa - checkForDupsInsideDB: Event exist 
+Page: uwindsormsa - checkForDupsInsideDB: Event exist 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+************************
+
+  Date is Sun Jul 30 2017 13:30:01 GMT-0400 (EDT)
+  
+  ************************
+Reached End of app
+switch uwindsormsa
+switch wic
+Calling readFromFirebase
+Page: uwindsormsa - checkForDupsInsideDB: Event exist 
+Page: uwindsormsa - checkForDupsInsideDB: Event exist 
+Page: uwindsormsa - checkForDupsInsideDB: Event exist 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+Calling readFromFirebase
+Page: wic - checkForDupsInsideDB: Event exist 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+************************
+
+  Date is Sun Jul 30 2017 14:00:01 GMT-0400 (EDT)
+  
+  ************************
+Reached End of app
+switch wic
+switch uwindsormsa
+Calling readFromFirebase
+Page: wic - checkForDupsInsideDB: Event exist 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+Calling readFromFirebase
+Page: uwindsormsa - checkForDupsInsideDB: Event exist 
+Page: uwindsormsa - checkForDupsInsideDB: Event exist 
+Page: uwindsormsa - checkForDupsInsideDB: Event exist 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+************************
+
+  Date is Sun Jul 30 2017 14:30:01 GMT-0400 (EDT)
+  
+  ************************
+Reached End of app
+switch wic
+switch uwindsormsa
+Calling readFromFirebase
+Page: wic - checkForDupsInsideDB: Event exist 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+Calling readFromFirebase
+Page: uwindsormsa - checkForDupsInsideDB: Event exist 
+Page: uwindsormsa - checkForDupsInsideDB: Event exist 
+Page: uwindsormsa - checkForDupsInsideDB: Event exist 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+************************
+
+  Date is Sun Jul 30 2017 15:00:01 GMT-0400 (EDT)
+  
+  ************************
+Reached End of app
+************************
+
+  Date is Sun Jul 30 2017 16:30:02 GMT-0400 (EDT)
+  
+  ************************
+Reached End of app
+switch wic
+switch uwindsormsa
+Calling readFromFirebase
+Page: uwindsormsa - checkForDupsInsideDB: Event exist 
+Page: uwindsormsa - checkForDupsInsideDB: Event exist 
+Page: uwindsormsa - checkForDupsInsideDB: Event exist 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+Calling readFromFirebase
+Page: wic - checkForDupsInsideDB: Event exist 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+************************
+
+  Date is Sun Jul 30 2017 17:00:01 GMT-0400 (EDT)
+  
+  ************************
+Reached End of app
+switch wic
+switch uwindsormsa
+Calling readFromFirebase
+Page: wic - checkForDupsInsideDB: Event exist 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+Calling readFromFirebase
+Page: uwindsormsa - checkForDupsInsideDB: Event exist 
+Page: uwindsormsa - checkForDupsInsideDB: Event exist 
+Page: uwindsormsa - checkForDupsInsideDB: Event exist 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
+FIREBASE WARNING: Using an unspecified index. Consider adding ".indexOn": "id" at /server/events to your security rules for better performance 
