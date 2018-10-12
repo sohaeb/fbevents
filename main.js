@@ -413,7 +413,6 @@
 
 
 
-// used to stop the stupid Firbase connection coz it doens't stop automatically
   setTimeout(() => {
     process.exit(0);
   }, 20000)
