@@ -6,4 +6,4 @@ package-lock.json
 big
 app.zip
 service_accounts
-service_accounts/*
+service_accounts/*bfg
