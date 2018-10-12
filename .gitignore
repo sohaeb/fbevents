@@ -3,5 +3,7 @@ npm-debug.log
 .DS_Store
 /*.env
 package-lock.json
-
-service_accounts/
+big
+app.zip
+service_accounts
+service_accounts/*
