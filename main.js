@@ -1,19 +1,17 @@
   var request = require("request");
   var admin = require("firebase-admin");
+  var fs = require("fs");
 
-  
+
   // TODO: Fix this to remove data
   // TODO: promises
   // TODO: remove old events
-
   
    //------- Constants & Variables -----------//
   let accessToken = 'access_token=301801280168696|FDzuXZs_Mio_vtBjPvH-fYcBglU'
   var param = 'events?fields=name,start_time,cover,end_time,place,description&since=now&' + accessToken;
   var url = 'https://graph.facebook.com'
   // full url -> 'https://graph.facebook.com/Ubuntu.Iraq/events?fields=name,start_time,end_time,place,description&since=now&access_token=301801280168696|FDzuXZs_Mio_vtBjPvH-fYcBglU')
-
-
 
 
   var date = Date();
@@ -24,38 +22,53 @@
 
   Date is ${date}
   
-  ************************`
+************************`
 
   );
 
-  // uwindsormsa
+  // **************************************************************************//
+  // - 0 - SETUP
+  //       Taken from Firebase instruction site
+  // **************************************************************************//
 
-  var serviceAccount = require("./service_accounts/uwindsormsa-b5d32-firebase-adminsdk-lpueq-f1492ecaf9.json");
+  // uwindsormsa
+ 
+  var serviceAccount = require("./service_accounts/********-firebase-adminsdk-lpueq-f1492ecaf9.json");
 
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-    databaseURL: "https://uwindsormsa-b5d32.firebaseio.com"
+    databaseURL: "https:///********--b5d32.firebaseio.com"
   });
 
+  // wihs
+
+  var serviceAccount = require("./service_accounts//********--firebase-adminsdk-wt0ij-6fe1afd91f.json");
+  
+    var wihs_config = {
+      credential: admin.credential.cert(serviceAccount),
+      databaseURL: "https:///********-.firebaseio.com"
+    };
+  
+    var wihs = admin.initializeApp(wihs_config, "wihs");
 
   // wia
 
-  var serviceAccount = require("./service_accounts/wiassociation-9e259-firebase-adminsdk-s9p59-474d67974c.json");
+  var serviceAccount = require("./service_accounts//********--9e259-firebase-adminsdk-s9p59-474d67974c.json");
 
   var wia_config = {
     credential: admin.credential.cert(serviceAccount),
-    databaseURL: "https://wiassociation-9e259.firebaseio.com"
+    databaseURL: "https:///********--9e259.firebaseio.com"
   };
 
   var wia = admin.initializeApp(wia_config, "wia");
 
   // noor
 
-  var serviceAccount = require("./service_accounts/anoorschool-4330c-firebase-adminsdk-6fsxt-220743a3e6.json");
+  var serviceAccount = require("./service_accounts//********--4330c-firebase-adminsdk-6fsxt-220743a3e6.json");
 
   var noor_config = {
     credential: admin.credential.cert(serviceAccount),
-    databaseURL: "https://anoorschool-4330c.firebaseio.com"
+    databaseURL: "https:///********--4330c.firebaseio.com"
   };
 
   var noor = admin.initializeApp(noor_config, "noor");
@@ -70,14 +83,41 @@
   };
 
   var wic = admin.initializeApp(node_config, "wic");
+  
+  // taqwa
+
+  var serviceAccount = require("./service_accounts//********--c3f3a-firebase-adminsdk-qskin-ab61be736d.json");
+  
+  var taqwa_config = {
+    credential: admin.credential.cert(serviceAccount),
+    databaseURL: "https:///********--c3f3a.firebaseio.com"
+  };
 
 
+  var taqwa = admin.initializeApp(taqwa_config, "/********-");
 
- 
+  // London Mosque
+
+    var serviceAccount = require("./service_accounts//********--b9250-firebase-adminsdk-gfm05-15a3c3fb69.json");
+    
+      var London_config = {
+        credential: admin.credential.cert(serviceAccount),
+        databaseURL: "https:///********--b9250.firebaseio.com"
+      };
+    
+      var london = admin.initializeApp(London_config, "/********-");
+  
+
+  
+  //============================================================================
+  //  Request is a JavaScript Function (Async)
+  //  Donloads JSON data automatically
+  //============================================================================
+
   // wic
 
   request({
-    url: url + '/uwindsormsa/' + param,
+    url: url + '/********-' + param,
     json: true
   }, function (error, response, body) {
 
@@ -91,7 +131,7 @@
   // noor
 
   request({
-    url: url + '/annoorschool/' + param,
+    url: url + '//********-/' + param,
     json: true
   }, function (error, response, body) {
     if (!error && response.statusCode === 200 && body.data.length > 0) {
@@ -105,7 +145,7 @@
   // windsor
 
   request({
-    url: url + '/windsormosque/' + param,
+    url: url + '//********-/' + param,
     json: true
   }, function (error, response, body) {
 
@@ -120,7 +160,7 @@
   //WIC
 
   request({
-    url: url + '/WindsorIslamicC/' + param,
+    url: url + '//********-/' + param,
     json: true
   }, function (error, response, body) {
 
@@ -148,25 +188,26 @@
   // **************************************************************************//
   // - 2 - Connect to Database & read from <path>
   // **************************************************************************//
+
   function accessFirebaseDataBase(jsonData, fbPage) {
 
     // console.log("entering switch");
     switch (fbPage) {
-      case "uwindsormsa":
+      case "/********-":
         var ref = admin.database();
-        console.log("switch uwindsormsa");
+        console.log("switch /********-");
         break;
-      case "noor":
+      case "/********-":
         var ref = noor.database();
-        console.log("switch noor");
+        console.log("switch /********-");
         break;
-      case "wia":
+      case "/********-":
         var ref = wia.database();
-        console.log("switch wia");
+        console.log("switch /********-");
         break;
-      case "wic":
+      case "/********-":
         var ref = wic.database();
-        console.log("switch wic");
+        console.log("switch /********-");
         break;
       default:
         console.log("error at switch");
@@ -181,63 +222,28 @@
     // var ref = admin.database().ref("server/events");
 
     ref.ref("server/events").once("value", function (snapshot) {
+      
+      // Check if data exists in our Firebase DB
+
       if (snapshot.val() !== null) {
 
         // -- 4 --
+        // Yes, data exist
+        // so we 1st check for Dups
+        // if not, Add them
         readFromFirebase(jsonData, ref, fbPage);
 
       } else {
 
         // -- 5 --
+        // No, Firebase DB is empty
+        // So we add them
         noDataExist(jsonData, ref, fbPage)
       }
     });
   }
 
-  // **************************************************************************//
-  //  - 3 - check if two pages are hosting similar events and delete 1 from json
-  // **************************************************************************//
-  // function checkForMultipleHost(jsonData) {
-  // // for ()
-  //   var m = i + 1
-  //   // ******************** //
-  //   // reading every page
-  //   // ******************** //
-  //   for (var i = 0; i < jsonData.length-1; i++){
-  //   //  var m = i + 1
-  //   // console.log("i is " + i);
-  //     console.log(jsonData[i]);
-  //
-  //     // ************************************************** //
-  //     // reading inside of each page (each events)
-  //     // ************************************************* //
-  //     for (var j = 0; j < jsonData[i].data.length; j++) {
-  //       var m = i + 1
-  //       // console.log(jsonData[m].data.length);
-  //
-  //       // ******************** *************************//
-  //       // reading event + 1 to comapre with previous
-  //       // ******************** *************************//
-  //       if (jsonData[m].data.length > 0) {
-  //     //  console.log("here");
-  //       //console.log(i + " " + j);
-  //       // console.log("value is " + jsonData[m].data[j].id);
-  //       if (jsonData[i].data[j].id === jsonData[m].data[j].id){
-  //       // var m = i+1
-  //         // console.log("Found dups at index" + i + " " + j);
-  //
-  //         // *********************************************************//
-  //         // delete the duplicated event from JSON then save to db
-  //         // *********************************************************//
-  //         delete jsonData[i].data[j];
-  //
-  //         // console.log("data json is " + jsonData[i].data[j].name);
-  //         }
-  //       }
-  //     }
-  //   }
-  //   return jsonData
-  // }
+
 
   // *****************************************************************//
   //  - 4 - Write Data to Database -----------
@@ -247,19 +253,16 @@
 
     // console.log("jsonData.length " + jsonData.length);
     //console.log("jsonData[i].length " + jsonData[0].length);
+   
+   
     // Loop the JSON values
 
-    // console.log("i is " + i);
-    // console.log(jsonData[i].data.length);
-    // console.log("jsonData[i].length is " + jsonData[i].length);
     for (var j = 0; j < jsonData.data.length; j++) {
 
-      //   console.log("inside for-loop");
-      //   console.log("jsonData.length is " + jsonData[i].data[j]);
-      //   console.log("out j is " + j);
-
+     
       // - 4 - A -
       checkForDupsInsideDB(jsonData, j, jsonData.data[j].id, fbRef, fbPage);
+
     }
     // console.log("out of loop j");
 
@@ -273,31 +276,11 @@
       // console.log(i + "/data");
       fbRef.ref("server/events").orderByChild("id").equalTo(id).once("value", function (snapshot) {
         var userData = snapshot.val();
-        //console.log("inside index is " + index);
-        //console.log("DB value is = " + userData[index].name);
-        //console.log("jsonData value is = " + id);
+   
         if (userData) {
           console.log("Page: " + fbPage  + " - checkForDupsInsideDB: Event exist ");
 
-          // console.log("exists!");
-          // console.log("inside index is " + i);
-
-          // ------- [Object object] -> use stringfy to parse it
-          //console.log("DB value is = " + JSON.stringify(userData));
-
-
-          //console.log("test 123 " + Object.values( userData.id));
-          //console.log("test" + Object.values( userData));
-
-          // ------- undefined
-          // console.log("DB value is = " + userData.id);
-
-          // ------- Undefined
-          // console.log("DB value is = " + userData[i]);
-
-          // ------- Error
-          // console.log("DB value is = " + userData[j].id);
-
+         
         } else {
            console.log("Page: " + fbPage  + " - checkForDupsInsideDB: Event doesn't exis in DB ");
           
@@ -323,7 +306,7 @@
       "name": jsonData.data[i].name
     }
     
-    fbRef.ref("/server/name").set(data, function (error) {
+    fbRef.ref("/cool").set(data, function (error) {
       if (error) {
         // console.log("Page: " + fbPage  + " - checkForDupsInsideDB: Event doesn't exis in DB ");
         console.log("Page: " + fbPage  + " - addUnderNameFOrNotifications: Name of event could not be saved." + error);
@@ -400,8 +383,37 @@
 
   console.log("Reached End of app");
 
-  // used to stop the fuking thing
 
+  //=============================================================
+  //
+  // We will cereate a function to save new events to Text file
+  //
+  //=============================================================
+
+  function saveToTextFile() {
+
+    var fs = require('fs');
+      fs.writeFile("/test", "Hey there!", function(err) {
+       if(err) {
+        return console.log(err);
+    }
+
+    console.log("The file was saved!");
+}); 
+
+
+  }
+  
+
+  //============================================================
+  // 
+  //
+  //
+  //============================================================
+
+
+
+// used to stop the stupid Firbase connection coz it doens't stop automatically
   setTimeout(() => {
     process.exit(0);
   }, 20000)
