@@ -31,44 +31,34 @@
   //       Taken from Firebase instruction site
   // **************************************************************************//
 
-  // uwindsormsa
- 
-  var serviceAccount = require("./service_accounts/********-firebase-adminsdk-lpueq-f1492ecaf9.json");
+// uwindsormsa
+
+  var serviceAccount = require("./service_accounts/uwindsormsa-b5d32-firebase-adminsdk-lpueq-f1492ecaf9.json");
 
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-    databaseURL: "https:///********--b5d32.firebaseio.com"
+    databaseURL: "https://uwindsormsa-b5d32.firebaseio.com"
   });
 
-  // wihs
-
-  var serviceAccount = require("./service_accounts//********--firebase-adminsdk-wt0ij-6fe1afd91f.json");
-  
-    var wihs_config = {
-      credential: admin.credential.cert(serviceAccount),
-      databaseURL: "https:///********-.firebaseio.com"
-    };
-  
-    var wihs = admin.initializeApp(wihs_config, "wihs");
 
   // wia
 
-  var serviceAccount = require("./service_accounts//********--9e259-firebase-adminsdk-s9p59-474d67974c.json");
+  var serviceAccount = require("./service_accounts/wiassociation-9e259-firebase-adminsdk-s9p59-474d67974c.json");
 
   var wia_config = {
     credential: admin.credential.cert(serviceAccount),
-    databaseURL: "https:///********--9e259.firebaseio.com"
+    databaseURL: "https://wiassociation-9e259.firebaseio.com"
   };
 
   var wia = admin.initializeApp(wia_config, "wia");
 
   // noor
 
-  var serviceAccount = require("./service_accounts//********--4330c-firebase-adminsdk-6fsxt-220743a3e6.json");
+  var serviceAccount = require("./service_accounts/anoorschool-4330c-firebase-adminsdk-6fsxt-220743a3e6.json");
 
   var noor_config = {
     credential: admin.credential.cert(serviceAccount),
-    databaseURL: "https:///********--4330c.firebaseio.com"
+    databaseURL: "https://anoorschool-4330c.firebaseio.com"
   };
 
   var noor = admin.initializeApp(noor_config, "noor");
@@ -83,18 +73,20 @@
   };
 
   var wic = admin.initializeApp(node_config, "wic");
+
+
   
   // taqwa
 
-  var serviceAccount = require("./service_accounts//********--c3f3a-firebase-adminsdk-qskin-ab61be736d.json");
+  var serviceAccount = require("./service_accounts/altaqwaschool-c3f3a-firebase-adminsdk-qskin-ab61be736d.json");
   
   var taqwa_config = {
     credential: admin.credential.cert(serviceAccount),
-    databaseURL: "https:///********--c3f3a.firebaseio.com"
+    databaseURL: "https://altaqwaschool-c3f3a.firebaseio.com"
   };
 
 
-  var taqwa = admin.initializeApp(taqwa_config, "/********-");
+  var taqwa = admin.initializeApp(taqwa_config, "taqwa");
 
   // London Mosque
 
@@ -117,7 +109,7 @@
   // wic
 
   request({
-    url: url + '/********-' + param,
+    url: url + '/WindsorIslamicC/' + param,
     json: true
   }, function (error, response, body) {
 
@@ -131,7 +123,7 @@
   // noor
 
   request({
-    url: url + '//********-/' + param,
+    url: url + '/uwindsormsa/' + param,
     json: true
   }, function (error, response, body) {
     if (!error && response.statusCode === 200 && body.data.length > 0) {
@@ -145,7 +137,7 @@
   // windsor
 
   request({
-    url: url + '//********-/' + param,
+    url: url + '/windsormosque/' + param,
     json: true
   }, function (error, response, body) {
 
@@ -160,7 +152,7 @@
   //WIC
 
   request({
-    url: url + '//********-/' + param,
+    url: url + '/annoorschool/' + param,
     json: true
   }, function (error, response, body) {
 
@@ -193,22 +185,22 @@
 
     // console.log("entering switch");
     switch (fbPage) {
-      case "/********-":
-        var ref = admin.database();
-        console.log("switch /********-");
-        break;
-      case "/********-":
-        var ref = noor.database();
-        console.log("switch /********-");
-        break;
-      case "/********-":
-        var ref = wia.database();
-        console.log("switch /********-");
-        break;
-      case "/********-":
-        var ref = wic.database();
-        console.log("switch /********-");
-        break;
+        case "uwindsormsa":
+          var ref = admin.database();
+          console.log("switch uwindsormsa");
+          break;
+        case "noor":
+          var ref = noor.database();
+          console.log("switch noor");
+          break;
+        case "wia":
+          var ref = wia.database();
+          console.log("switch wia");
+          break;
+        case "wic":
+          var ref = wic.database();
+          console.log("switch wic");
+          break;
       default:
         console.log("error at switch");
         break;
